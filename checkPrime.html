@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Check Prime</title>
+        
+     
+    </head>
+    <body>
+        <p>How woud you bverify a prime number?</p>
+
+        <ol>
+            <li>C - clarify: clarify with examples</li>
+                <ul>
+                    <li>Prime number: Number only divisible by itself and 1</li>
+                    <li>Need to take the number as input</li>
+                    <li>Output will be true or false</li>
+                </ul>
+            <li>V - Visualize: need to spend most of time</li>
+                <ol>
+                    <li>primenumbers = 2, 3, 5, 7, 11 ...</li>
+                    <li>need function takes numeric parameter</li>
+                    <li>need to find whether input number will be able to divided by any smaller number than itself</li>
+                    <li>If input number modulus smaller numbers doesnt return 0, it means that number is prime number</li>
+                    <li>If any input number modulus smaller numbers returns 0, it means this number is not a prime number </li>
+                    <li>return true or false according to 4, 5 results</li>
+                </ol>
+            <li>W - Write the code</li>
+            <li>D - Debugger with an example</li>
+            <li>R - Refactor - make it simpler</li>
+        </ol>
+
+
+        <div id="solution">
+            <input type="number" placeholder="enter your number" id="inputnum"/>
+            <button onclick="checkPrime()">click</button>
+            <p id="results"></p>
+        </div>
+        <script>
+            // function checkPrime(num) {                
+            //     var counter = 2;
+            //     var msg = "";
+            //     while(counter < num) {
+            //         if(num % counter === 0) {
+            //             msg ="This is not a prime num"
+            //             return msg;
+            //         }
+            //         else {
+            //             counter++;
+            //         }
+            //     }
+            //     msg = "This is a prime num"
+            //     return msg;
+            // }
+
+            // console.log(checkPrime(32));
+
+            function checkPrime() {
+                var userInput = document.getElementById('inputnum').value;
+                var counter = 2;
+                var msg = "";
+
+                while(counter < userInput) {
+                    if(userInput % counter === 0) {
+                        msg ="This is not a prime num";
+                        document.getElementById('results').innerHTML = msg;
+                        return false;
+                    }
+                    else {
+                        counter++;
+                    }
+                }
+                msg = "This is a prime num";
+                document.getElementById('results').innerHTML = msg;
+                return true;
+            }
+         
+        </script>
+    </body>
+</html>
+
